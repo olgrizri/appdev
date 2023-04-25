@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +19,7 @@ Route::get('/', function () {
  
 
 Route::resource('persona', 'App\Http\Controllers\PersonaController');
+Route::resource('asignatura', 'App\Http\Controllers\AsignaturaController');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
